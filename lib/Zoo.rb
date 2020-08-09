@@ -26,7 +26,7 @@ class Zoo
         # binding.pry
     end
 
-    def find_by_species(species)
+    def find_by_species(species) #string arg
         self.animals.select { |animal| animal.species == species.capitalize }
     end
 
@@ -34,8 +34,8 @@ class Zoo
         self.animals.map { |animal| animal.nickname }
     end
 
-    def self.find_by_location(location_arg)
-        Zoo.all.select { |zoo| zoo.location == location_arg}
+    def self.find_by_location(location_arg) #string arg
+        Zoo.all.select { |zoo| zoo.location == location_arg }
     end
 
 end
