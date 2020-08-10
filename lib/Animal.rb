@@ -16,7 +16,7 @@ class Animal
         @@all
     end 
 
-    def find_by_species(species_arg)
+    def self.find_by_species(species_arg)
        animal_arr =  Animal.all.select do |animal|
             animal.species == species_arg
         end 

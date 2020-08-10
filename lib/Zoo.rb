@@ -41,7 +41,7 @@ class Zoo
         animals.map(&:nickname)
     end 
 
-    def find_by_location(location_arg)
+    def self.find_by_location(location_arg)
        zoos = Zoo.all.select do |zoo|
             zoo.location == location_arg
         end
