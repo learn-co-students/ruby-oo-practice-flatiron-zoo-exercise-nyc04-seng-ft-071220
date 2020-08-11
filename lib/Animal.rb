@@ -9,11 +9,12 @@ attr_accessor :weight, :zoo
 # Animal#species should return the species of the animal.
 
 
-@all = []
-    def initialize(species_arg, weight_arg, nickname_arg)
+@@all = []
+    def initialize(species_arg, weight_arg, nickname_arg, zoo_inst)
         @species = species_arg
         @weight = weight_arg
         @nickname = nickname_arg
+        @zoo = zoo_inst
         @@all << self
     end
 
@@ -23,13 +24,9 @@ attr_accessor :weight, :zoo
         @@all
     end
 
-    # Animal#zoo should return the zoo instance that the instance belongs to.
-    # def zoo
-    #     Zoo.all??? #there is no zoo information asked for??
-    # end
 
-    def find_by_species(species_arg)
-        self.class.all.select {|animal| animal.species == species_arg}
+    def self.find_by_species(species_arg)
+        self.all.select {|animal| animal.species == species_arg}
     end
 
 end
